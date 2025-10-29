@@ -1,0 +1,270 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────────────────────
+   Auto-generated semantic tokens
+   ───────────────────────────────────────────────────────── */
+:root {
+  --font-sans: Inter, ui-sans-serif, system-ui;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --core-white: 255 255 255;
+  --core-black: 0 0 0;
+
+  --content-primary: 9 9 11;
+  --content-secondary: 113 113 122;
+  --content-tertiary: 161 161 170;
+
+  --content-inverse-primary: 255 255 255;
+  --content-inverse-secondary: 212 212 216;
+  --content-inverse-tertiary: 228 228 231;
+
+  --content-red: 185 28 28;
+  --content-orange: 194 65 12;
+  --content-amber: 180 83 9;
+  --content-yellow: 161 98 7;
+  --content-lime: 63 98 18;
+  --content-green: 21 128 61;
+  --content-emerald: 4 120 87;
+  --content-teal: 15 118 110;
+  --content-cyan: 14 116 144;
+  --content-sky: 3 105 161;
+  --content-blue: 29 78 216;
+  --content-indigo: 67 56 202;
+  --content-violet: 109 40 217;
+  --content-purple: 107 33 168;
+  --content-fuchsia: 134 25 143;
+  --content-pink: 157 23 77;
+  --content-rose: 190 18 60;
+  --content-zinc: 63 63 70;
+
+  --background-primary: 255 255 255;
+  --background-secondary: 250 250 250;
+  --background-tertiary: 244 244 245;
+  --background-quaternary: 228 228 231;
+
+  --background-inverse-primary: 9 9 11;
+  --background-inverse-secondary: 24 24 27;
+
+  --background-overlay: 0 0 0 / 25%;
+  --background-inverse-overlay: 255 255 255 / 2.5%;
+
+  --background-red: 254 242 242;
+  --background-orange: 255 247 237;
+  --background-amber: 255 251 235;
+  --background-yellow: 254 252 232;
+  --background-lime: 247 254 231;
+  --background-green: 240 253 244;
+  --background-emerald: 236 253 245;
+  --background-teal: 240 253 250;
+  --background-cyan: 236 254 255;
+  --background-sky: 240 249 255;
+  --background-blue: 239 246 255;
+  --background-indigo: 238 242 255;
+  --background-violet: 245 243 255;
+  --background-purple: 250 245 255;
+  --background-fuchsia: 253 244 255;
+  --background-pink: 253 242 248;
+  --background-rose: 255 241 242;
+  --background-zinc: 228 228 231;
+
+  --border-primary: 228 228 231;
+  --border-secondary: 212 212 216;
+  --border-tertiary: 228 228 231;
+  --border-overlay: 0 0 0 / 10%;
+  --border-inverse-overlay: 255 255 255 / 20%;
+  --border-error: 252 165 165;
+  --border-warning: 253 224 71;
+  --border-success: 134 239 172;
+  --border-accent: 147 197 253;
+
+  /* ── Hover States (Figma) ── */
+  --btn-hover: 255 255 255; /* Buttons/btn-hover → 밝은 오버레이(white) */
+  --btn-inverse-hover: 0 0 0; /* Buttons/btn-inverse-hover → 어두운 오버레이(black) */
+
+  --input-border-hover: 161 161 170; /* Inputs/input-border-hover → mid gray */
+  --input-border-hover-error: 185 28 28; /* Inputs/input-border-hover-error → error red (content-red tone) */
+
+  --focus-ring: 100 149 237; /* Cornflower Blue (#6495ED) */
+}
+
+/* ❗Dark mode token corrections:
+   - 다크에서 본문 텍스트는 밝아야 하므로 --content-primary 를 255 255 255 로 교정
+   - inverse 계열은 라이트 톤 유지 */
+.dark {
+  --core-white: 255 255 255;
+  --core-black: 0 0 0;
+
+  --content-primary: 255 255 255; /* fixed */
+  --content-secondary: 161 161 170;
+  --content-tertiary: 161 161 170;
+
+  --content-inverse-primary: 9 9 11;
+  --content-inverse-secondary: 113 113 122;
+  --content-inverse-tertiary: 161 161 170;
+
+  --content-red: 248 113 113;
+  --content-orange: 251 146 60;
+  --content-amber: 251 191 36;
+  --content-yellow: 250 204 21;
+  --content-lime: 163 230 53;
+  --content-green: 74 222 128;
+  --content-emerald: 52 211 153;
+  --content-teal: 45 212 191;
+  --content-cyan: 34 211 238;
+  --content-sky: 56 189 248;
+  --content-blue: 96 165 250;
+  --content-indigo: 129 140 248;
+  --content-violet: 167 139 250;
+  --content-purple: 168 85 247;
+  --content-fuchsia: 217 70 239;
+  --content-pink: 236 72 153;
+  --content-rose: 251 113 133;
+  --content-zinc: 161 161 170;
+
+  --background-primary: 24 24 27;
+  --background-secondary: 24 24 27;
+  --background-tertiary: 39 39 42;
+  --background-quaternary: 63 63 70;
+
+  --background-inverse-primary: 255 255 255;
+  --background-inverse-secondary: 250 250 250;
+
+  --background-overlay: 255 255 255 / 2.5%;
+  --background-inverse-overlay: 0 0 0 / 25%;
+
+  --background-red: 127 29 29;
+  --background-orange: 124 45 18;
+  --background-amber: 120 53 15;
+  --background-yellow: 113 63 18;
+  --background-lime: 54 83 20;
+  --background-green: 20 83 45;
+  --background-emerald: 6 78 59;
+  --background-teal: 19 78 74;
+  --background-cyan: 22 78 99;
+  --background-sky: 12 74 110;
+  --background-blue: 30 58 138;
+  --background-indigo: 49 46 129;
+  --background-violet: 76 29 149;
+  --background-purple: 88 28 135;
+  --background-fuchsia: 112 26 117;
+  --background-pink: 131 24 67;
+  --background-rose: 136 19 55;
+  --background-zinc: 63 63 70;
+
+  --border-primary: 63 63 70;
+  --border-secondary: 82 82 91;
+  --border-tertiary: 82 82 91;
+  --border-overlay: 255 255 255 / 20%;
+  --border-inverse-overlay: 0 0 0 / 20%;
+  --border-error: 248 113 113;
+  --border-warning: 251 191 36;
+  --border-success: 74 222 128;
+  --border-accent: 96 165 250;
+
+  --btn-hover: 255 255 255;
+  --btn-inverse-hover: 0 0 0;
+
+  --input-border-hover: 161 161 170;
+  --input-border-hover-error: 185 28 28;
+
+  --focus-ring: 100 149 237;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Base
+   ───────────────────────────────────────────────────────── */
+@layer base {
+  html {
+    font-family: theme("fontFamily.sans");
+    color: rgb(var(--content-primary));
+  }
+}
+
+/* ─────────────────────────────────────────────────────────
+   Utilities for components
+   ───────────────────────────────────────────────────────── */
+
+/* 포커스 링 offset을 현재 테마 배경에 자동 동기화 */
+.ring-offset-bg {
+  --tw-ring-offset-color: rgb(var(--background-primary));
+}
+
+/* 쇼케이스 강제 상태 (프리뷰 전용) */
+.forced-hover button {
+  /* hover 시 살짝 눌린 느낌 */
+  filter: brightness(0.98);
+}
+.forced-focus button {
+  outline: none !important;
+  /* Tailwind ring과 비슷한 비주얼 근사 */
+  box-shadow:
+    0 0 0 2px rgba(0, 0, 0, 0),
+    0 0 0 2px rgb(var(--content-blue));
+}
+
+/* ─────────────────────────────────────────────────────────
+   Components: Typography scale
+   ───────────────────────────────────────────────────────── */
+@layer components {
+  /* ─── Display ─── */
+  .text-display-extra-large {
+    @apply text-9xl leading-4 font-extrabold tracking-[-0.025em];
+  }
+  .text-display-large {
+    @apply text-8xl leading-4 font-extrabold tracking-[-0.025em];
+  }
+  .text-display-medium {
+    @apply text-7xl leading-4 font-extrabold tracking-[-0.025em];
+  }
+  .text-display-small {
+    @apply text-6xl leading-4 font-extrabold tracking-[-0.025em];
+  }
+  .text-display-tiny {
+    @apply text-5xl leading-4 font-extrabold tracking-[-0.025em];
+  }
+
+  /* ─── Headings ─── */
+  .text-heading-large {
+    @apply text-4xl leading-10 font-bold tracking-[-0.025em];
+  }
+  .text-heading-medium {
+    @apply text-3xl leading-9 font-bold tracking-[-0.025em];
+  }
+  .text-heading-small {
+    @apply text-2xl leading-8 font-bold tracking-[-0.025em];
+  }
+  .text-heading-tiny {
+    @apply text-xl leading-7 font-bold tracking-[-0.025em];
+  }
+
+  /* ─── Labels ─── */
+  .text-label-large {
+    @apply text-lg leading-7 font-medium tracking-normal;
+  }
+  .text-label-base {
+    @apply text-base leading-6 font-medium tracking-normal;
+  }
+  .text-label-small {
+    @apply text-sm leading-5 font-medium tracking-normal;
+  }
+  .text-label-tiny {
+    @apply text-xs leading-4 font-medium tracking-normal;
+  }
+
+  /* ─── Paragraphs ─── */
+  .text-paragraph-large {
+    @apply text-lg leading-7 font-normal tracking-normal;
+  }
+  .text-paragraph-base {
+    @apply text-base leading-6 font-normal tracking-normal;
+  }
+  .text-paragraph-small {
+    @apply text-sm leading-5 font-normal tracking-normal;
+  }
+  .text-paragraph-tiny {
+    @apply text-xs leading-4 font-normal tracking-normal;
+  }
+}
