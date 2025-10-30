@@ -7,7 +7,8 @@ import Select from "./components/Select";
 import { BadgeShowcase } from "./components/Badge";
 import ShowcaseAvatar from "./components/Avatar";
 import CheckboxShowcase from "./components/Checkbox";
-
+import ShowcaseDropdown from "./components/Dropdown";
+import Radio, { RadioShowcase } from "./components/Radio";
 
 
 const sizes = ["xs", "sm", "base", "l", "xl"];
@@ -344,6 +345,22 @@ export default function App() {
           Checkbox
         </h1>
         <CheckboxShowcase />
+      </div>
+
+      {/* Dropdown 쇼케이스 */}
+      <div className="max-w-4xl w-full px-6 py-10">
+        <h1 className="text-heading-small mb-6 text-content-secondary">
+          Dropdown
+        </h1>
+        <ShowcaseDropdown />
+      </div>
+
+      {/* Radio 쇼케이스 */}
+      <div className="max-w-4xl w-full px-6 py-10">
+        <h1 className="text-heading-small mb-6 text-content-secondary">
+          Radio
+        </h1>
+        <RadioShowcase />
       </div>
     </main>
   );
