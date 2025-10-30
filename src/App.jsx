@@ -4,6 +4,9 @@ import { ShowcaseButton as Button } from "./components/Button";
 import ThemeToggle from "./components/ThemeToggle";
 import Input, { InputCell } from "./components/Input";
 import Select from "./components/Select";
+import { BadgeShowcase } from "./components/Badge";
+import ShowcaseAvatar from "./components/Avatar";
+import CheckboxShowcase from "./components/Checkbox";
 
 
 
@@ -148,6 +151,7 @@ export default function App() {
         </section>
       ))}
 
+      {/* Input 쇼케이스 */}
       <section className="mb-12">
         <h2 className="mb-3 text-label-base font-semibold text-content-secondary">
           Input – Light (Error = False)
@@ -214,7 +218,7 @@ export default function App() {
         </div>
       </section>
 
-
+      {/* Select 쇼케이스 */}
       <section className="mb-12">
         <h2 className="mb-3 text-label-base font-semibold text-content-secondary">
           Select – Light
@@ -317,6 +321,30 @@ export default function App() {
           </table>
         </div>
       </section>
+
+      {/* Badge 쇼케이스 */}
+      <div className="max-w-4xl w-full px-6 py-10">
+        <h1 className="text-heading-small mb-6 text-content-secondary">
+          Badge
+        </h1>
+        <BadgeShowcase />
+      </div>
+
+      {/* Avatar 쇼케이스 */}
+      <div className="max-w-4xl w-full px-6 py-10">
+        <h1 className="text-heading-small mb-6 text-content-secondary">
+          Avatar
+        </h1>
+        <ShowcaseAvatar />
+      </div>
+
+      {/* Checkbox 쇼케이스 */}
+      <div className="max-w-4xl w-full px-6 py-10">
+        <h1 className="text-heading-small mb-6 text-content-secondary">
+          Checkbox
+        </h1>
+        <CheckboxShowcase />
+      </div>
     </main>
   );
 }
