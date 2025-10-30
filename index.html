@@ -1,13 +1,27 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>inventis-ds</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>inventis-ds</title>
+</head>
+<script>
+  (function () {
+    const KEY = "theme";
+    const root = document.documentElement;
+    const saved = localStorage.getItem(KEY);
+    const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const theme = saved || (systemDark ? "dark" : "light");
+    if (theme === "dark") root.classList.add("dark");
+    root.style.colorScheme = theme; // 폼 컨트롤/스크롤바 등 네이티브 동기화
+  })();
+</script>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>
